@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books & Interviews - Suzanne Collins</title>
+
+<style>
+/* MAIN SECTION */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background: #f8f5f2;
+}
+
+.books-section {
+  padding: 60px 5%;
+  background: #C9B59C;
+  text-align: center;
+}
+
+/* NAVIGATION */
+nav {
+  background: #5C4033;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+nav .nav_title {
+  font-size: 1.5rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffd59a;
+}
+
+.books-section h1 {
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  color: #4a2f2f;
+}
+
+/* GRID */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* BOOK CARD */
+.book-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: 0.4s ease;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  height: 420px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* IMAGE */
+.book-img {
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* TITLE */
+.book-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  color: #2e1f1f;
+  font-weight: 600;
+}
+
+/* INFO */
+.book-info {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.book-card p {
+  color: #444;
+  line-height: 1.5;
+  opacity: 0;
+  max-height: 0;
+  overflow-y: auto;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  flex-grow: 1;
+}
+
+/* ACTIVE EXPAND */
+.book-card.active {
+  height: 540px !important;
+  box-shadow: 0 18px 30px rgba(0,0,0,0.25);
+  transform: translateY(-8px) scale(1.03);
+}
+
+.book-card.active p {
+  opacity: 1;
+  max-height: 550px;
+}
+
+/* AUDIO SAMPLE BUTTON */
+.audio-sample {
+  margin-top: 10px;
+}
+
+.audio-sample a {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #5C4033;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.audio-sample a:hover {
+  background-color: #7a5746;
+}
+
+/* IMAGE LINKS */
+.c1 { background: url('https://upload.wikimedia.org/wikipedia/en/thumb/2/20/Sunrise_on_the_Reaping_book_cover.jpg/220px-Sunrise_on_the_Reaping_book_cover.jpg'); }
+.c2 { background: url('https://upload.wikimedia.org/wikipedia/en/f/f1/The_Ballad_of_Songbirds_and_Snakes_%28Suzanne_Collins%29.png'); }
+.c3 { background: url('data:image/webp;base64,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'); }
+.c4 { background: url('https://upload.wikimedia.org/wikipedia/en/c/cc/Mockingjay.JPG'); }
+.c5 { background: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1586722941i/6148028.jpg'); }
+.c6 { background: url('https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/The_Hunger_Games.jpg/250px-The_Hunger_Games.jpg'); }
+.c7 { background: url('https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Gregor_the_Overlander.jpg/250px-Gregor_the_Overlander.jpg'); }
+.c8 { background: url('https://upload.wikimedia.org/wikipedia/en/8/80/Bane-cover.jpg'); }
+.c9 { background: url('https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/Warmbloods-cover.jpg/250px-Warmbloods-cover.jpg'); }
+.c10 { background: url('https://upload.wikimedia.org/wikipedia/en/5/5c/Secret-cover.jpg'); }
+.c11 { background: url('https://upload.wikimedia.org/wikipedia/en/c/c7/Gregor_and_the_Code_of_Claw_first_edition_cover_art.jpg'); }
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="nav_title">Suzanne Collins</div>
+  <ul>
+    <li><a href="main1.html">HOME</a></li>
+  </ul>
+</nav>
+
+<!-- BOOKS -->
+<section class="books-section">
+  <h1>BOOKS & INTERVIEWS</h1>
+
+  <div class="books-grid">
+
+    <!-- Hunger Games Series -->
+    <div class="book-card">
+      <div class="book-img c1"></div>
+      <h4>SUNRISE ON THE REAPING</h4>
+      <div class="book-info">Dystopian | 2023 | Scholastic Press</div>
+      <p>As the day dawns on the fiftieth annual Hunger Games, fear grips the districts of Panem. This year, in honor of the Quarter Quell, twice as many tributes will be taken from their homes. Back in District 12, Haymitch Abernathy is trying not to think too hard about his chances. All he cares about is making it through the day and being with the girl he loves.</p>
+    </div>
+
+    <div class="book-card">
+      <div class="book-img c2"></div>
+      <h4>THE BALLAD OF SONGBIRDS AND SNAKES</h4>
+      <div class="book-info">Dystopian | 2020 | Scholastic Press</div>
+      <p>It is the morning of the reaping that will kick off the tenth annual Hunger Games. In the Capitol, eighteen-year-old Coriolanus Snow is preparing for his one shot at glory as a mentor in the Games. The once-mighty house of Snow has fallen on hard times, its fate hanging on the slender chance that Coriolanus will be able to outcharm, outwit, and outmaneuver his fellow students to mentor the winning tribute.</p>
+    </div>
+
+    <div class="book-card">
+      <div class="book-img c3"></div>
+      <h4>YEAR OF THE JUNGLE</h4>
+      <div class="book-info">Memoir | 2013 | Scholastic Press</div>
+      <p>When Suzy's father is called to war in a faraway jungle, she struggles to deal with his absence.</p>
+    </div>
+
+    <div class="book-card">
+      <div class="book-img c4"></div>
+      <h4>MOCKINGJAY</h4>
+      <div class="book-info">Dystopian | 2010 | Scholastic Press</div>
+      <p>Katniss Everdeen, girl on fire, has survived, even though her home has been destroyed. There are rebels. There are new leaders. A revolution is unfolding.</p>
+    </div>
+
+    <div class="book-card">
+      <div class="book-img c5"></div>
+      <h4>CATCHING FIRE</h4>
+      <div class="book-info">Dystopian | 2009 | Scholastic Press</div>
+      <p>Much to her shock, Katniss has fueled an unrest she's afraid she cannot stop. As time draws near for Katniss and Peeta to visit the districts on the Capitol's cruel Victory Tour, the stakes are higher than ever. If they can't prove their love convincingly, the consequences will be horrifying.</p>
+    </div>
+
+    <div class="book-card">
+      <div class="book-img c6"></div>
+      <h4>THE HUNGER GAMES</h4>
+      <div class="book-info">Dystopian | 2008 | Scholastic Press</div>
+      <p>Katniss is a 16-year-old girl living with her mother and younger sister in the poorest district of Panem. When her sister is chosen by lottery, Katniss steps up to go in her place in the deadly Hunger Games.</p>
+    </div>
+
+    <!-- Gregor Series with Audio -->
+    <div class="book-card">
+      <div class="book-img c7"></div>
+      <h4>GREGOR THE OVERLANDER</h4>
+      <div class="book-info">Fantasy | 2003 | Scholastic Press</div>
+      <p>Meet Gregor, a kid from New York City, who falls out of his laundry room into a fantastical subterranean world called the Underland. Accompanied by his toddler sister, Boots, he encounters giant talking creatures and an unusual society of humans, who expect him to fulfill a prophecy.</p>
+      <div class="audio-sample">
+        <a href="/attachments/Gregor-the-Overlander-Audio-Book-Sample.mp3" target="_blank" download>
+          Click here to download  the Audio of book (857 KB)
+        </a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-img c8"></div>
+      <h4>GREGOR AND THE PROPHECY OF BANE</h4>
+      <div class="book-info">Fantasy | 2004 | Scholastic Press</div>
+      <p>When giant roaches kidnap Boots and spirit her back to the Underland, Gregor follows to retrieve her. Soon he discovers that they are both implicated in “The Prophecy of Bane,” warning of a terrifying white rat that must be destroyed.</p>
+      <div class="audio-sample">
+        <a href="/attachments/Prophecy-of-Bane-Audio-Book-Sample.mp3" target="_blank" download>
+          Click here to download  the Audio of book (745 KB)
+        </a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-img c9"></div>
+      <h4>GREGOR AND THE CURSE OF THE WARMBLOODS</h4>
+      <div class="book-info">Fantasy | 2005 | Scholastic Press</div>
+      <p>Gregor and Boots must return to the Underland to help find a cure for a deadly plague called the Curse of the Warmbloods. A member of Gregor’s family is stricken, raising the stakes of the mission.</p>
+      <div class="audio-sample">
+        <a href="/attachments/Curse-of-the-Warmbloods-Audio-Book--Sample.mp3" target="_blank" download>
+          Click here to download  the Audio of book (801 KB)
+        </a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-img c10"></div>
+      <h4>GREGOR AND THE MARKS OF SECRET</h4>
+      <div class="book-info">Fantasy | 2006 | Scholastic Press</div>
+      <p>Gregor sets out to solve a mystery involving the Underland mice and discovers a terrible secret, leading directly into the final book of the series, "Gregor and the Code of Claw."</p>
+      <div class="audio-sample">
+        <a href="/attachments/Marks-of-Secret-Audio-Book-Sample.mp3" target="_blank" download>
+          Click here to download the Audio of book (622 KB)
+        </a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-img c11"></div>
+      <h4>GREGOR AND THE CODE OF CLAW</h4>
+      <div class="book-info">Fantasy | 2007 | Scholastic Press</div>
+      <p>Everyone in the Underland is hiding the Prophecy of Time from Gregor. With an army of rats approaching, Gregor must protect his family and defend Regalia, while cracking codes and navigating new alliances. Time is running out in this epic conclusion.</p>
+      <div class="audio-sample">
+        <a href="/attachments/Code-of-Claw-Audio-Book-Sample.mp3" target="_blank" download>
+          Click here to download  the Audio of book (787 KB)
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".book-card");
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("active");
+      cards.forEach(other => {
+        if (other !== card) other.classList.remove("active");
+      });
+    });
+  });
+
+  if (window.innerWidth > 768) {
+    cards.forEach(card => {
+      card.addEventListener("mouseenter", () => card.classList.add("active"));
+      card.addEventListener("mouseleave", () => card.classList.remove("active"));
+    });
+  }
+});
+</script>
+
+</body>
+</html>

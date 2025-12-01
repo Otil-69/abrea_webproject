@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suzanne Collins — Author</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f7f2ec;
+      color: #2d2d2d;
+    }
+
+    nav {
+      background: #5C4033;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffd59a;
+    }
+
+    .page-container {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .author-card {
+      background: #fff;
+      max-width: 800px;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .author-photo img {
+      width: 250px;
+      border-radius: 15px;
+      transition: transform 0.5s;
+    }
+
+    .author-photo img:hover {
+      transform: scale(1.05);
+    }
+
+    .author-name {
+      font-size: 28px;
+      color: #5C4033;
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    .author-role {
+      font-size: 14px;
+      color: #7a7a7a;
+      margin-bottom: 15px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: #5C4033;
+      margin: 10px auto 20px;
+      border-radius: 4px;
+    }
+
+    .bio, .summary {
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    .summary {
+      background: #fff8f8;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #f0d0d0;
+    }
+
+    .facts {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .fact {
+      background: #fff3f3;
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      color: #5C4033;
+    }
+
+    .works {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .works h4 {
+      text-align: center;
+      color: #5C4033;
+      margin-bottom: 10px;
+    }
+
+    .actions a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #5C4033;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #5C4033;
+    }
+
+    .btn-ghost {
+      border: 1px solid #b22222;
+      color: #b22222;
+    }
+
+    .btn-ghost:hover {
+      background: #b22222;
+      color: white;
+    }
+
+    ul.achievements {
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #7a7a7a;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div>Suzanne Collins</div>
+    <div>
+      <a href="main1.html">Home</a>
+      <a href="p1.html">Books</a>
+    </div>
+  </nav>
+
+  <div class="page-container">
+    <div class="author-card">
+      <div class="author-photo">
+        <img src="https://victorsvillage.wordpress.com/wp-content/uploads/2014/01/suzanne_collins.jpg" alt="Suzanne Collins">
+      </div>
+
+      <div class="author-name">Suzanne Collins</div>
+      <div class="author-role">Author · Screenwriter</div>
+      <div class="divider"></div>
+
+      <p class="bio">
+        Suzanne Collins is a highly acclaimed American author and screenwriter best known for creating <em>The Hunger Games</em> series. Her works highlight survival, courage, and society's influence.
+      </p>
+
+      <div class="summary">
+        <strong>Career & Achievements:</strong> Started in children’s TV, wrote <em>Little Bear</em>, <em>Oswald</em>, then transitioned to bestselling books. <em>The Hunger Games</em> series sold over 100 million copies and inspired blockbuster films.
+      </div>
+
+      <div class="facts">
+        <div class="fact">Born: August 10, 1962</div>
+        <div class="fact">Genre: Young Adult</div>
+        <div class="fact">Best known for The Hunger Games</div>
+      </div>
+
+      <div class="works">
+        <h4>Selected Works</h4>
+        <ul>
+          <li>The Hunger Games (2008)</li>
+          <li>Catching Fire (2009)</li>
+          <li>Mockingjay (2010)</li>
+          <li>The Ballad of Songbirds & Snakes (2020)</li>
+          <li>The Underland Chronicles</li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <a class="btn-primary" href="https://en.wikipedia.org/wiki/Suzanne_Collins">Read More</a>
+        <a class="btn-ghost" href="https://www.instagram.com/ohthehungergamesposts/?hl=en">Follow</a>
+      </div>
+
+      <ul class="achievements">
+        <li>Author of the #1 bestselling series <em>The Hunger Games</em>.</li>
+        <li>Winner of the California Young Reader Medal.</li>
+        <li>Named one of Time Magazine’s 100 Most Influential People (2010).</li>
+        <li>Books adapted into a major global film franchise.</li>
+      </ul>
+
+      <p class="note">Tip: Replace the image if needed.</p>
+    </div>
+  </div>
+
+</body>
+</html>
